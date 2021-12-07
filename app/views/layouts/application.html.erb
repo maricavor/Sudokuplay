@@ -1,0 +1,78 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title><%= @title %></title>
+<meta name="keywords" content="sudoku, free sudoku, play sudoku, sudoku solver, sudoku generator, online game, game, sudoku puzzles, sudoku online, web sudoku, online sudoku, printable sudoku, sudokuplay, free sudoku puzzles, sudoku puzzle, sudoku free, soduko puzzles, web sudoko, websudoku, suduko" />
+<meta name="description" content="Free online Flash-based 9x9 Sudoku puzzles. Includes easy, medium, difficult and extremely difficult levels." />
+<meta name="Revisit-After" content="30 Days" />
+<meta name="robots" content="all,index" />
+<meta name="author" content="Sergey Tsyganov" />
+  <%= stylesheet_link_tag "application", :media => "all" %>
+            <%= javascript_include_tag "application" %>
+<script type="text/javascript">
+    swfobject.registerObject("sudoku", "8.0.0","/swf/expressInstall.swf");
+   </script>
+<link rel="shortcut icon" href="/play.ico" type="image/x-icon"/>
+</head>
+<body>
+ <div id="masthead"> 
+
+  <div id="share">
+  <a href="http://www.addtoany.com/share_save?linkname=Sudokuplay.net&amp;linkurl=http://www.sudokuplay.net"><img src="http://static.addtoany.com/buttons/share_save_120_16.gif" width="120" height="16" border="0" alt="Share/Save/Bookmark"/></a><script type="text/javascript">a2a_linkname="Sudokuplay.net";a2a_linkurl="http://www.sudokuplay.net";</script><script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script></div>
+  
+  </div>
+   
+<div id="wrapper">
+<div id="innerwrap">
+ 
+  <div id="content">
+  <div id="logo"> <%= link_to(image_tag("/images/logo.gif", :size => "350x103", :border => 0, :alt => "Sudokuplay"), "http://sudokuplay-sudokuplay.rhcloud.com") %> </div>
+  <%= yield %> 
+  </div>
+  <div id="footer">
+
+    <div id="navigation">
+      <ul>
+        <li><%= nav_link "Play!", "site", "index" %></li>
+        <li><%= nav_link "About", "site", "about" %></li>
+        <li> <%= link_to "Feedback", "http://sudokuplay.uservoice.com" %></li>
+        <li> <%= link_to "Support", "mailto:support@sudokuplay.net" %></li>
+          <li> <%= link_to(image_tag("/images/twitter1.gif", :size => "20x26", :border => 0, :alt => "Follow on Twitter"), "http://twitter.com/sudokuplay") %></li>
+      </ul>
+    </div>
+    <div id="copyright"> <b>Copyright © 2009-2015 Sudokuplay.</b> All Rights Reserved. </div>
+  </div>
+  </div>
+</div>
+<% if controller.action_name!= "index" -%>
+<script type="text/javascript">
+var uservoiceJsHost = ("https:" == document.location.protocol) ? "https://uservoice.com" : "http://cdn.uservoice.com";
+document.write(unescape("%3Cscript src='" + uservoiceJsHost + "/javascripts/widgets/tab.js' type='text/javascript'%3E%3C/script%3E"))
+</script>
+<script type="text/javascript">
+UserVoice.Tab.show({ 
+  key: 'sudokuplay',
+  host: 'sudokuplay.uservoice.com', 
+  forum: 'general', 
+  alignment: 'left', /* 'left', 'right' */
+  background_color:'#06C', 
+  text_color: 'white', /* 'white', 'black' */
+  hover_color: '#1B97F2',
+  lang: 'en' /* 'en', 'de', 'nl', 'es', 'fr' */
+})
+</script>
+<% end -%>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8461785-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>
